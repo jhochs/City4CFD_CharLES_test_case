@@ -1,0 +1,36 @@
+{
+  "point_clouds" :
+  {
+    "ground": "../ground_pointcloud.ply",
+    "buildings" : "../off-ground_pointcloud.ply"
+  },
+  "polygons" : [
+    {
+      "type": "Building",
+      "path": "buildings.geojson"
+    }
+  ],
+
+  "point_of_interest": [549207,5274073],
+  "influence_region":  "influ_region.geojson",
+  "domain_bnd":        "domain_bnd.geojson",
+  "top_height":        200,
+  "flow_direction":    [1, 0],
+  "buffer_region":     15,
+  "reconstruct_boundaries": true,
+
+  "terrain_thinning": 95,
+  "smooth_terrain":   true,
+
+  "lod": "1.2",
+  "building_percentile": 90,
+
+  "edge_max_len": 3,
+
+  "output_file_name":  "Mesh",
+  "output_format":     "stl",
+  "output_separately": true,
+
+  "output_log": true,
+  "log_file": "logFile.log"
+}

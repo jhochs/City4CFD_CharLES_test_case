@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "buildings_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::6596" } },
+"features": [
+{ "type": "Feature", "properties": { "release": null, "capture_dates_range": null, "osm_id": null, "osm_way_id": null, "name": null, "type": null, "aeroway": null, "amenity": null, "admin_level": null, "barrier": null, "boundary": null, "building": null, "craft": null, "geological": null, "historic": null, "land_area": null, "landuse": null, "leisure": null, "man_made": null, "military": null, "natural": null, "office": null, "place": null, "shop": null, "sport": null, "tourism": null, "other_tags": null }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 548963.416880492935888, 5273877.25052675511688 ], [ 549151.894078178331256, 5274129.791402471251786 ], [ 549351.512785086524673, 5274036.945492281578481 ], [ 549193.674737763823941, 5273743.552416081540287 ], [ 548963.416880492935888, 5273877.25052675511688 ] ] ] } }
+]
+}

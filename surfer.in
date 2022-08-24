@@ -1,0 +1,30 @@
+SURF STL City4CFD_CharLES_test_case/Geometry/Original/buildings.stl
+SURF STL City4CFD_CharLES_test_case/Geometry/Original/ground.stl
+SURF STL City4CFD_CharLES_test_case/Geometry/Original/inlet.stl
+SURF STL City4CFD_CharLES_test_case/Geometry/Original/outlet.stl
+SURF STL City4CFD_CharLES_test_case/Geometry/Original/Rside.stl
+SURF STL City4CFD_CharLES_test_case/Geometry/Original/Lside.stl
+SURF STL City4CFD_CharLES_test_case/Geometry/Original/top.stl
+
+RENAME_ZONE buildings.stl buildings
+RENAME_ZONE ground.stl ground
+RENAME_ZONE inlet.stl inlet
+RENAME_ZONE outlet.stl outlet
+RENAME_ZONE Rside.stl rside
+RENAME_ZONE Lside.stl lside
+RENAME_ZONE top.stl top
+
+ALIGN_NORMALS
+
+# Periodicity BCs on side walls
+SET_PERIODIC ZONES rside lside CART 0 0 460  # last number is distance between z0, z1
+
+#TRANSLATE DX 0 -0.01 0 ZONE_NAMES buildings  # translate buildings down so that it overlaps ground
+#REFINE_TRIS ZONE_NAMES ground DELTA 0.5  # refine intersection between building and ground
+#INTERSECT ZONE_NAMES ground buildings MODE SUBTRACT  # delete the part of the building below the domain - MAY be ADD instead of SUBTRACT
+
+RUN_DIAGNOSTICS CHECK_SELF_INTERSECTIONS
+
+WRITE_SBIN test_case.sbin
+
+INTERACTIVE

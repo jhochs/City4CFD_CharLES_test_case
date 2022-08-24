@@ -1,8 +1,8 @@
 {
   "point_clouds" :
   {
-    "ground": "../ground_pointcloud.ply",
-    "buildings" : "../off-ground_pointcloud.ply"
+    "ground": "ground_pointcloud.ply",
+    "buildings" : "off-ground_pointcloud.ply"
   },
   "polygons" : [
     {

@@ -1,0 +1,15 @@
+#SURF SBIN City4CFD_CharLES_test_case/box.sbin
+SURF STL City4CFD_CharLES_test_case/Geometry/Processed/box_repaired.stl
+SURF STL City4CFD_CharLES_test_case/Geometry/Processed/buildings_intfacesremoved_repaired.stl
+
+RENAME_ZONE box_repaired.stl domain
+RENAME_ZONE buildings_intfacesremoved_repaired.stl buildings
+
+FLIP SUBZONES 1  # flip building normals to make the exterior fluid touching
+
+TRANSLATE DX 0 -0.3 0 ZONE_NAMES buildings  # translate buildings down so that it overlaps ground
+INTERSECT ZONE_NAMES domain buildings MODE SUBTRACT  # delete the part of the building below the domain - MAY be ADD instead of SUBTRACT
+
+RUN_DIAGNOSTICS CHECK_SELF_INTERSECTIONS
+
+INTERACTIVE
